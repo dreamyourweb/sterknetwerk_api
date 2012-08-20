@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-FactoryGirl.create(:user) unless User.where(email: "test@dreamyourweb.nl")
+FactoryGirl.create(:user) if User.where(email: "test@dreamyourweb.nl").first.nil?
 
 FactoryGirl.create(:aspect, title: "Mogelijkheden", answer_type: "mc")
 FactoryGirl.create(:aspect, title: "Beveiliging", answer_type: "mc")

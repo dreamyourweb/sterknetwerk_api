@@ -40,7 +40,12 @@ class QuestionsController < ApplicationController
   # POST /questions
   # POST /questions.json
   def create
+    @aspect = Aspect.where(id: params[:aspect_id])
+    @indicator = Indicator.where(id: params[:indicator_id])
+    params.delete :aspect_id, :indicator_id
     @question = Question.new(params[:question])
+    @question.indicator = @indicator
+    @question.aspect = @aspect
 
     respond_to do |format|
       if @question.save

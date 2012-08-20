@@ -25,15 +25,15 @@
   </div>
   <div class="field">
     <%= f.label :answer_type %><br />
-    <%= f.text_field :answer_type %>
+    <%= f.select :answer_type, ["mc", "cash"] %>
   </div>
   <div class="field">
-    <%= f.label :score %><br />
-    <%= f.number_field :score %>
+    <%= f.label :aspect %><br />
+    <%= f.collection_select(:aspect_id, Aspect.all, :id, :title) %>
   </div>
   <div class="field">
     <%= f.label :indicator %><br />
-    <%= f.number_field :indicator %>
+    <%= f.collection_select(:indicator_id, Indicator.all, :id, :title) %>
   </div>
   <div class="field">
     <%= f.label :factor %><br />
