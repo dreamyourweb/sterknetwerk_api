@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @aspect.title %>
+</p>
+
+<p>
+  <b>Score:</b>
+  <%= @aspect.score %>
+</p>
+
+
+<%= link_to 'Edit', edit_aspect_path(@aspect) %> |
+<%= link_to 'Back', aspects_path %>

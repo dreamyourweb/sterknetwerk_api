@@ -11,15 +11,34 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120820113021) do
+ActiveRecord::Schema.define(:version => 20120820134947) do
+
+  create_table "aspects", :force => true do |t|
+    t.string   "title"
+    t.integer  "score"
+    t.string   "answer_type"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "indicators", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.text     "example"
+    t.string   "score"
+    t.integer  "aspect_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "questions", :force => true do |t|
     t.string   "title"
-    t.string   "answers",                       :array => true
-    t.integer  "answer_scores",                 :array => true
+    t.string   "answers"
+    t.integer  "answer_scores"
     t.string   "answer_type"
     t.integer  "score"
-    t.integer  "indicator"
+    t.integer  "indicator_id"
+    t.integer  "aspect_id"
     t.integer  "factor"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false

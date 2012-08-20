@@ -1,4 +1,8 @@
 Sterknetwerk::Application.routes.draw do
+  resources :indicators
+
+  resources :aspects
+
   resources :questions
 
   devise_for :users

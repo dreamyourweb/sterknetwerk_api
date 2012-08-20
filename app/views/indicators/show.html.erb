@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @indicator.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @indicator.description %>
+</p>
+
+<p>
+  <b>Example:</b>
+  <%= @indicator.example %>
+</p>
+
+<p>
+  <b>Score:</b>
+  <%= @indicator.score %>
+</p>
+
+<p>
+  <b>Aspect:</b>
+  <%= @indicator.aspect_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_indicator_path(@indicator) %> |
+<%= link_to 'Back', indicators_path %>
