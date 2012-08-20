@@ -6,6 +6,7 @@ gem 'rails', '3.2.8'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
+gem 'postgres_ext'
 
 
 # Gems used only for assets and not required
@@ -21,6 +22,10 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'bootstrap-sass'
+gem 'devise'
+gem 'factory_girl_rails'
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -31,3 +36,7 @@ gem 'jquery-rails'
 # Use unicorn as the app server
 # gem 'unicorn'
 gem 'thin'
+
+group :test, :development do
+  gem 'rspec-rails'
+end

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  answers: 
+  answer_scores: 
+  answer_type: MyString
+  score: 1
+  indicator: 1
+  factor: 1
+
+two:
+  title: MyString
+  answers: 
+  answer_scores: 
+  answer_type: MyString
+  score: 1
+  indicator: 1
+  factor: 1
