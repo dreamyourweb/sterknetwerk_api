@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe "/api/v1/results", type: :api do
+describe "/questions", type: :api do
   let(:user) { FactoryGirl.create(:user) } 
   let(:token) { user.authentication_token }
   
@@ -9,7 +9,7 @@ describe "/api/v1/results", type: :api do
   end
   
   context "questions with user authentication" do
-    let(:url) { "/api/v1/results" }
+    let(:url) { "/questions" }
     it "json" do
       get "#{url}.json", token: token
       questions_json = Question.all.to_json

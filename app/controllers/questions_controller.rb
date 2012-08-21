@@ -3,7 +3,7 @@ class QuestionsController < ApplicationController
   # GET /questions.json
   def index
     if params[:aspect_id]
-      @questions = Aspect.find(params[:aspect_id]).questions.all)
+      @questions = Aspect.find(params[:aspect_id]).questions.all
     else
       @questions = Question.all
     end
