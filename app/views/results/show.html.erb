@@ -1,0 +1,192 @@
+<div class="page">
+			<div class="green-cover"></div>
+			<div class="title-box"><h1>Analyserapport Netwerkbeheer</h1></div>
+			<div class="cover-logo"></div>
+			<div class="kracht"><h4>Uw kracht achter de schermen</h4></div>
+		</div>
+
+		<div class="page">
+			<h2>Contact</h2>
+			<div class="contact-container">
+				<h3>Sterknetwerk B.V.</h3>
+				<dl>
+					<dt>Post Adres:</dt>
+						<dd>Postbus 334 </dd>
+						<dd>5280AH Boxtel </dd>
+					<dt>Bezoek Adres:</dt>
+						<dd>St. Lambertusweg 52 </dd>
+						<dd>5291AC Gemonde </dd>
+					<dt>Telefoon:</dt>
+						<dd>073-5510565</dd>
+					<dt>Fax:</dt>
+						<dd>073-5510564</dd>
+					<dt>Mail:</dt>
+						<dd>info@sterknetwerk.nl </dd>
+					<dt>KvK:</dt>
+						<dd>17148758 's-Hertogenbosch</dd>
+				</dl>
+				<div class="spacer"></div>
+				<h3 id="company-name">Klant</h3>
+				<dl>
+					<dt>Contact persoon:</dt>
+						<dd id="client-name">Piet Heijn!</dd>
+					<dt>Telefoon:</dt>
+						<dd id="client-tel">073-5510565 </dd>
+					<dt>Mail:</dt>
+						<dd id="client-email">info@sterknetwerk.nl </dd>
+				</dl>
+			</div>
+			<div style="clear:both"></div>
+			<div class="footer"><div class="footer-bar"></div></div>
+		</div>
+
+		<% Aspect.all.each do |aspect| %>
+			<div class="page">
+				<h2><%= aspect.title %></h2>
+				<% aspect.indicators.each do |indicator| %>
+					<div style="clear:both"></div>
+					<div class="aspect-image image1"><div class="passfail <%= indicator.pass ? "pass" : "fail" %>"></div></div>
+					<div class="aspect-text">
+						<h3><%= indicator.title %></h3>
+						<p><%= indicator.description %></p>
+					</div>
+				<% end %>
+				<div style="clear:both"></div>
+				<div class="footer"><div class="footer-bar"></div></div>
+			</div>
+		<% end %>
+
+		<!--<page1>-->
+		<div class="page">
+			<h2>Beveiliging</h2>
+			<div class="aspect-image image1"><div class="passfail pf1"></div></div>
+			<div class="aspect-text">
+				<h3 class="i1">Mobiele werkplek</h3>
+				<p class="i1">Overal en altijd bij uw gegevens kunnen. Als professional zit u nooit stil en dus is het belangrijk dat uw werkomgeving met u meereist. Deze indicator geeft aan hoe goed u bent ingespeeld op het thuis- of op locatie werken. Overal dezelfde werkomgeving en altijd toegang tot uw gegevens. Dat is het streven voor u en uw personeel.</p>
+			</div>
+			<div style="clear:both"></div>
+			<div class="aspect-image image2"><div class="passfail pf2"></div></div>
+			<div class="aspect-text">
+				<h3 class="i2">Mobiele werkplek</h3>
+				<p class="i2">Overal en altijd bij uw gegevens kunnen. Als professional zit u nooit stil en dus is het belangrijk dat uw werkomgeving met u meereist. Deze indicator geeft aan hoe goed u bent ingespeeld op het thuis- of op locatie werken. Overal dezelfde werkomgeving en altijd toegang tot uw gegevens. Dat is het streven voor u en uw personeel.</p>
+			</div>
+			<div style="clear:both"></div>
+			<div class="aspect-image image3"><div class="passfail pf3"></div></div>
+			<div class="aspect-text">
+				<h3 class="i3">Mobiele werkplek</h3>
+				<p class="i3">Overal en altijd bij uw gegevens kunnen. Als professional zit u nooit stil en dus is het belangrijk dat uw werkomgeving met u meereist. Deze indicator geeft aan hoe goed u bent ingespeeld op het thuis- of op locatie werken. Overal dezelfde werkomgeving en altijd toegang tot uw gegevens. Dat is het streven voor u en uw personeel.</p>
+			</div>
+			<div style="clear:both"></div>
+			<div class="aspect-image image4"><div class="passfail pf4"></div></div>
+			<div class="aspect-text">
+				<h3 class="i4">Mobiele werkplek</h3>
+				<p class="i4">Overal en altijd bij uw gegevens kunnen. Als professional zit u nooit stil en dus is het belangrijk dat uw werkomgeving met u meereist. Deze indicator geeft aan hoe goed u bent ingespeeld op het thuis- of op locatie werken. Overal dezelfde werkomgeving en altijd toegang tot uw gegevens. Dat is het streven voor u en uw personeel.</p>
+			</div>
+			<div style="clear:both"></div>
+			<div class="footer"><div class="footer-bar"></div></div>
+		</div>
+		<!--</page1>-->
+
+		<!--<page2>-->
+		<div class="page">
+			<h2>Continuiteit</h2>
+			<div class="aspect-image image1"><div class="passfail pf1"></div></div>
+			<div class="aspect-text">
+				<h3 class="i1">Mobiele werkplek</h3>
+				<p class="i1">Overal en altijd bij uw gegevens kunnen. Als professional zit u nooit stil en dus is het belangrijk dat uw werkomgeving met u meereist. Deze indicator geeft aan hoe goed u bent ingespeeld op het thuis- of op locatie werken. Overal dezelfde werkomgeving en altijd toegang tot uw gegevens. Dat is het streven voor u en uw personeel.</p>
+			</div>
+			<div style="clear:both"></div>
+			<div class="aspect-image image2"><div class="passfail pf2"></div></div>
+			<div class="aspect-text">
+				<h3 class="i2">Mobiele werkplek</h3>
+				<p class="i2">Overal en altijd bij uw gegevens kunnen. Als professional zit u nooit stil en dus is het belangrijk dat uw werkomgeving met u meereist. Deze indicator geeft aan hoe goed u bent ingespeeld op het thuis- of op locatie werken. Overal dezelfde werkomgeving en altijd toegang tot uw gegevens. Dat is het streven voor u en uw personeel.</p>
+			</div>
+			<div style="clear:both"></div>
+			<div class="aspect-image image3"><div class="passfail pf3"></div></div>
+			<div class="aspect-text">
+				<h3 class="i3">Mobiele werkplek</h3>
+				<p class="i3">Overal en altijd bij uw gegevens kunnen. Als professional zit u nooit stil en dus is het belangrijk dat uw werkomgeving met u meereist. Deze indicator geeft aan hoe goed u bent ingespeeld op het thuis- of op locatie werken. Overal dezelfde werkomgeving en altijd toegang tot uw gegevens. Dat is het streven voor u en uw personeel.</p>
+			</div>
+			<div style="clear:both"></div>
+			<div class="aspect-image image4"><div class="passfail pf4"></div></div>
+			<div class="aspect-text">
+				<h3 class="i4">Mobiele werkplek</h3>
+				<p class="i4">Overal en altijd bij uw gegevens kunnen. Als professional zit u nooit stil en dus is het belangrijk dat uw werkomgeving met u meereist. Deze indicator geeft aan hoe goed u bent ingespeeld op het thuis- of op locatie werken. Overal dezelfde werkomgeving en altijd toegang tot uw gegevens. Dat is het streven voor u en uw personeel.</p>
+			</div>
+			<div style="clear:both"></div>
+			<div class="footer"><div class="footer-bar"></div></div>
+		</div>
+		<!--</page2>-->
+
+		<!--<page3>-->				
+		<div class="page">
+			<h2>Mogelijkheden</h2>
+			<div class="aspect-image image1"><div class="passfail pf1"></div></div>
+			<div class="aspect-text">
+				<h3 class="i1">Mobiele werkplek</h3>
+				<p class="i1">Overal en altijd bij uw gegevens kunnen. Als professional zit u nooit stil en dus is het belangrijk dat uw werkomgeving met u meereist. Deze indicator geeft aan hoe goed u bent ingespeeld op het thuis- of op locatie werken. Overal dezelfde werkomgeving en altijd toegang tot uw gegevens. Dat is het streven voor u en uw personeel.</p>
+			</div>
+			<div style="clear:both"></div>
+			<div class="aspect-image image2"><div class="passfail pf2"></div></div>
+			<div class="aspect-text">
+				<h3 class="i2">Mobiele werkplek</h3>
+				<p class="i2">Overal en altijd bij uw gegevens kunnen. Als professional zit u nooit stil en dus is het belangrijk dat uw werkomgeving met u meereist. Deze indicator geeft aan hoe goed u bent ingespeeld op het thuis- of op locatie werken. Overal dezelfde werkomgeving en altijd toegang tot uw gegevens. Dat is het streven voor u en uw personeel.</p>
+			</div>
+			<div style="clear:both"></div>
+			<div class="aspect-image image3"><div class="passfail pf3"></div></div>
+			<div class="aspect-text">
+				<h3 class="i3">Mobiele werkplek</h3>
+				<p class="i3">Overal en altijd bij uw gegevens kunnen. Als professional zit u nooit stil en dus is het belangrijk dat uw werkomgeving met u meereist. Deze indicator geeft aan hoe goed u bent ingespeeld op het thuis- of op locatie werken. Overal dezelfde werkomgeving en altijd toegang tot uw gegevens. Dat is het streven voor u en uw personeel.</p>
+			</div>
+			<div style="clear:both"></div>
+			<div class="aspect-image image4"><div class="passfail pf4"></div></div>
+			<div class="aspect-text">
+				<h3 class="i4">Mobiele werkplek</h3>
+				<p class="i4">Overal en altijd bij uw gegevens kunnen. Als professional zit u nooit stil en dus is het belangrijk dat uw werkomgeving met u meereist. Deze indicator geeft aan hoe goed u bent ingespeeld op het thuis- of op locatie werken. Overal dezelfde werkomgeving en altijd toegang tot uw gegevens. Dat is het streven voor u en uw personeel.</p>
+			</div>
+			<div style="clear:both"></div>
+			<div class="footer"><div class="footer-bar"></div></div>
+		</div>
+		<!--</page3>-->
+
+		<!--<page_cost>-->			
+		<div class="page">
+			<h2>Kosten</h2>
+			<div class="cost-container">
+				<h3 id="huidige-kosten-name">Huidige kosten:</h3>
+				<span class="huidige-kosten">12345</span>
+				<h3 id="sn-kosten">Kosten SterkNetwerk:</h3>
+				<span class="sn-kosten">12345</span>
+				<h3 id="besparing">U bespaart:</h3>
+				<span class="besparing">12345</span>
+			</div>
+			<div style="clear:both"></div>
+			<div class="footer"><div class="footer-bar"></div></div>
+		</div>
+		<!--</page_cost>-->
+
+		<div class="page">
+			<div class="handshake"></div>
+			<div class="greenbox">
+				<h3 class="i1">Consultancy</h3>
+				<p>We zijn tijdelijk of permanent inzetbaar voor specialistisch advies en scholing op het gebied van ICT.</p>
+			</div>
+			<div class="greenbox">
+				<h3 class="i1">Helpdesk</h3>
+				<p>Elke minuut offline is er &eacute;&eacute;n teveel. Daarom lossen we problemen direct en zonder extra kosten op.</p>
+			</div>
+			<div class="greenbox">
+				<h3 class="i1">Netwerkbeheer</h3>
+				<p>Een goede netwerkbeheerder helpt u tijd-, efficiency- en prestatiewinst met uw netwerk te behalen.</p>
+			</div>
+			<div class="greenbox">
+				<h3 class="i1">Werkplekbeheer</h3>
+				<p>Een standaard werkplek bestaat niet. Daarom biedt Sterknetwerk, sterk maatwerk op de werkplek.</p>
+			</div>
+			<div class="lastbox"></div>
+			<div class="disclaimer">
+				<p>Dit analyserapport is gebaseerd op een kennismakingsgesprek en is een globale afspiegeling van de huidige situatie binnen uw organisatie. Wilt u inzoomen op bepaalde aspecten van uw organisatie die uit dit rapport voortkomen; neem dan contact op met Sterknetwerk via 073-5510565. Aan dit rapport kunnen geen rechten worden ontleend.</p>
+			</div>
+			<div class="cover-logo"></div>
+			<div class="kracht"><h4>Uw kracht achter de schermen</h4></div>
+		</div>

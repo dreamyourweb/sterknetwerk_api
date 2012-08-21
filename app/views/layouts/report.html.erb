@@ -1,0 +1,351 @@
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<%= yield %>
+	</body>
+</html>
+
+
+<style>
+	html{
+		font-family: HelveticaNeue, helvetica, arial;
+		margin: 0;
+		padding: 0;
+		width: 210mm;
+		width: 420mm;
+		font-size: 200%;
+	}
+
+	body{
+		width: 210mm;
+		width: 420mm;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+
+	h1{
+		font-size: 20pt;
+		line-height: 22pt;
+		font-weight: bold;
+		color: white;
+		padding: 25pt;
+		margin-bottom: 0px;
+
+		font-size: 40pt;
+		line-height: 44pt;
+		font-weight: bold;
+		color: white;
+		padding: 50pt;
+		margin-bottom: 0px;
+	}
+
+	.title-box{
+		border-radius: 12pt;
+		background-color: rgb(36,62,137);
+		width: 100%;
+
+		border-radius: 24pt;
+		background-color: rgb(36,62,137);
+		width: 100%;
+	}
+
+	h2{
+		color: rgb(36,62,137);
+		font-weight: bold;
+		font-size: 34pt;
+		margin: 0;
+
+		color: rgb(36,62,137);
+		font-weight: bold;
+		font-size: 68pt;
+		margin: 0;
+		margin-bottom: 50pt;
+	}
+
+	.green-cover{
+		background-image: url(https://s3-eu-west-1.amazonaws.com/sterknetwerk/report/voorzijde.jpg);
+		background-repeat: no-repeat;
+		background-size: 130%;
+		background-position: 20% 0%;
+		-webkit-border-bottom-right-radius: 15px;
+		-webkit-border-bottom-left-radius: 15px;
+		-moz-border-radius-bottomright: 15px;
+		-moz-border-radius-bottomleft: 15px;
+		border-bottom-right-radius: 15px;
+		border-bottom-left-radius: 15px;	
+		width: 100%;
+		height: 72%;
+
+				-webkit-border-bottom-right-radius: 30pt;
+		-webkit-border-bottom-left-radius: 30pt;
+		-moz-border-radius-bottomright: 30pt;
+		-moz-border-radius-bottomleft: 30pt;
+		border-bottom-right-radius: 30pt;
+		border-bottom-left-radius: 30pt;
+	}
+
+	.cover-logo{
+		background-image: url(https://s3-eu-west-1.amazonaws.com/sterknetwerk/report/logo.svg);
+		float: right;
+		margin-right: 40pt;
+		margin-top: 10pt;
+		width: 120pt;
+		height: 90pt;
+		background-size: 100%;
+		background-repeat: no-repeat;
+		float: right;
+
+				background-image: url(https://s3-eu-west-1.amazonaws.com/sterknetwerk/report/logo.svg);
+		float: right;
+		margin-right: 80pt;
+		margin-top: 20pt;
+		width: 240pt;
+		height: 180pt;
+		background-size: 100%;
+		background-repeat: no-repeat;
+		float: right;
+	}
+
+	.kracht{
+		clear:both;
+		float: right;
+		margin-right: 40pt;
+
+		clear:both;
+		float: right;
+		margin-right: 80pt;
+	}
+	.kracht h4{
+		font-size: 15pt;
+		color: rgb(0,166,81);
+		font-weight: bold;
+
+		font-size: 30pt;
+		color: rgb(0,166,81);
+		font-weight: bold;
+	}
+
+	.page{
+		position: relative;
+		height: 271.5mm;
+		width: 184.5mm;
+		padding: 12.75mm;
+		overflow: hidden;
+
+		height: 543mm;
+		width: 369mm;
+		padding: 25.5mm;
+	}
+
+	.footer
+	{
+		position: absolute;
+		width: 184.5mm;
+		height: 100pt;
+		bottom: 0;
+		background-image: url(https://s3-eu-west-1.amazonaws.com/sterknetwerk/report/logo.svg);
+		background-repeat: no-repeat;
+		background-position: 80% 35%;
+		background-size: 10%;
+
+		width: 369mm;
+		height: 200pt;
+
+	}
+	.footer-bar{
+		/*position: absolute;*/
+		width: 184.5mm;
+		bottom: 30pt;
+		left: 0%;
+		height: 14pt;
+		border-radius: 5pt;
+		background-color: rgb(36,62,137);
+
+		width: 369mm;
+		bottom: 60pt;
+		left: 0%;
+		height: 28pt;
+		border-radius: 10pt;
+	}
+
+	.handshake{
+		width: 47%;
+		height: 69%;
+		background-image: url(https://s3-eu-west-1.amazonaws.com/sterknetwerk/report/handshake.jpg);
+		-webkit-border-bottom-right-radius: 15px;
+		-webkit-border-bottom-left-radius: 15px;
+		-moz-border-radius-bottomright: 15px;
+		-moz-border-radius-bottomleft: 15px;
+		border-bottom-right-radius: 15px;
+		border-bottom-left-radius: 15px;
+		background-size: 100%;
+		background-repeat: no-repeat;
+		float: left;
+
+
+				-webkit-border-bottom-right-radius: 30pt;
+		-webkit-border-bottom-left-radius: 30pt;
+		-moz-border-radius-bottomright: 30pt;
+		-moz-border-radius-bottomleft: 30pt;
+		border-bottom-right-radius: 30pt;
+		border-bottom-left-radius: 30pt;
+	}
+
+	.greenbox{
+		-webkit-border-radius: 15px;
+		-moz-border-radius: 15px;
+		border-radius: 15px;
+		background-color: rgb(159,204,59);
+		width: 47%;
+		float: right;
+		height: 15%;
+		margin-bottom: 4.5%;
+		color: white;
+
+				-webkit-border-radius: 30pt;
+		-moz-border-radius: 30pt;
+		border-radius: 30pt;
+	}
+
+	.lastbox{
+		height: 8%;
+		border-radius: 12pt;
+		background-color: rgb(36,62,137);
+		width: 100%;
+		clear: both;
+
+		border-radius: 24pt;
+	}
+
+	.disclaimer{
+		width: 60%;
+		margin-left: 20pt;
+		margin-top: 20pt;
+		float: left;
+		font-size: 10pt;
+
+		margin-left: 40pt;
+		margin-top: 40pt;
+		float: left;
+		font-size: 20pt;
+	}
+
+	.greenbox h3{
+		margin: 0;
+		margin-top: 5pt;
+		padding-left: 20pt;
+		padding-top: 10pt;
+		padding-right: 20pt;
+		font-weight: 100;
+		font-size: 17pt;
+		font-height: 17pt;0[]
+
+				margin-top: 10pt;
+		padding-left: 40pt;
+		padding-top: 20pt;
+		padding-right: 40pt;
+		font-size: 34pt;
+		font-height: 34pt;
+	}
+
+	.greenbox p{
+		padding-left: 20pt;
+		padding-top: 0pt;
+		padding-right: 20pt;
+		font-size: 11pt;
+		font-weight: 100;
+
+		padding-left: 40pt;
+		padding-top: 0pt;
+		padding-right: 40pt;
+		font-size: 22pt;
+	}
+
+	.aspect-image{
+		float: left;
+		width: 275pt;
+		height: 275pt;
+		background-repeat: no-repeat;
+		background-size: 100%;
+		margin-bottom: 30pt;
+	}
+
+	.passfail{
+		position: relative;
+		left: 150pt;
+		top: 120pt;
+		width: 150pt;
+		height: 150pt;
+		background-repeat: no-repeat;
+		background-size: 100%;
+	}
+
+	.pass{
+		background-image: url(https://s3-eu-west-1.amazonaws.com/sterknetwerk/report/pass.png);
+	}
+
+	.fail{
+		background-image: url(https://s3-eu-west-1.amazonaws.com/sterknetwerk/report/fail.png);
+	}
+
+	.beveiliging-image1{background-image: url(https://s3-eu-west-1.amazonaws.com/sterknetwerk/report/results-button-2-1.png)}
+	.beveiliging-image2{background-image: url(https://s3-eu-west-1.amazonaws.com/sterknetwerk/report/results-button-2-2.png)}
+	.beveiliging-image3{background-image: url(https://s3-eu-west-1.amazonaws.com/sterknetwerk/report/results-button-2-3.png)}
+	.beveiliging-image4{background-image: url(https://s3-eu-west-1.amazonaws.com/sterknetwerk/report/results-button-2-4.png)}
+
+	.aspect-text{
+		float: right;
+		width:65%;
+		margin-left: 5%;
+	}
+
+	.aspect-text h3{
+		color: black;
+		margin-top: 0;
+	}
+
+	.spacer{
+		height: 100px;
+		width: 1px;
+	}
+
+	.contact-container, .cost-container{
+		padding-left: 100px;
+	}
+
+	.cost-container h3{
+		margin-top: 100px;
+	}
+
+	.cost-container h3#besparing{
+		font-size: 50px;
+		margin-top: 200px;
+	}
+
+	.cost-container span{
+		font-size: 100px;
+	}
+
+	.cost-container span.besparing{
+		font-size: 200px;
+		font-weight: bold;
+	}
+
+	dt{
+		margin-top: 20px;
+		font-weight: bold;
+	}
+
+	@media all
+	{
+		.page-break	{ display:none; }
+	}
+
+	@media print
+	{
+		.page-break	{ display:block; page-break-before:always; }
+	}
+</style>

@@ -14,4 +14,9 @@ class ResultsController < ApplicationController
      end
    end
 
+  def show
+    @result = Result.first_or_initialize(:id => params[:id])
+    render :layout => "report"
+  end
+
 end
