@@ -5,6 +5,11 @@ class ResultsController < ApplicationController
     @results = Result.create(params[:results])
 
     respond_with(@results)
-
   end
+
+  def show
+    @result = Result.first_or_initialize(:id => params[:id])
+    render :layout => "report"
+  end
+
 end
