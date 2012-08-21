@@ -54,12 +54,13 @@ ActiveRecord::Schema.define(:version => 20120821131610) do
 
   create_table "results", :force => true do |t|
     t.string   "email"
-    t.string   "name"
+    t.string   "company_name"
+    t.string   "contact_name"
+    t.string   "tel"
     t.string   "cc"
-    t.string   "string"
     t.string   "bcc"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "users", :force => true do |t|

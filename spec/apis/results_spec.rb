@@ -6,16 +6,16 @@ describe "/results", type: :api do
   
   before do
     #@question = FactoryGirl.create(:question)
-    @results = FactoryGirl.create(:result)
+    @results = FactoryGirl.attributes_for(:result)
   end
   
-  context "questions with user authentication" do
-    let(:url) { "/results/1" }
+  context "results with user authentication" do
+    let(:url) { "/results" }
     it "json" do
-      post "#{url}.json", token: token, results: results
+      post "#{url}.json", token: token, results: @results
       results_json = Result.first.to_json
       last_response.body.should eql(results_json)
-      last_response.status.should eql(200)
+      last_response.status.should eql(201)
       results = JSON.parse(last_response.body)
       #p questions
       results.any? do |q|

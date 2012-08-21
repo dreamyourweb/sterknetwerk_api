@@ -1,11 +1,11 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :result, :class => 'Results' do
+  factory :result do
     email "MyString"
-    name "MyString"
+    contact_name "MyString"
+    company_name "kip"
     cc "MyString"
-    string "MyString"
     bcc "MyString"
   end
 end

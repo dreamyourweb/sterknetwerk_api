@@ -2,7 +2,8 @@ class ResultsController < ApplicationController
   # POST /aspects
   # POST /aspects.json
   def create
-     @results = Result.new(params)
+    p params[:results]
+     @results = Result.new(params[:results])
 
      respond_to do |format|
        if @results.save
