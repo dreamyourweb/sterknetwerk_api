@@ -1,22 +1,27 @@
 Sterknetwerk::Application.routes.draw do
   resources :indicators
 
-  resources :aspects
+  # resources :aspects
 
   resources :questions
+  
+  resources :aspects do
+    resources :questions
+    resources :indicators
+  end
 
   devise_for :users
 
-  namespace :api do
-    namespace :v1 do
-      resources :questions do
-        member do
-          get 'sync'
-          post 'results'
-        end
-      end
-    end
-  end
+  # namespace :api do
+  #   namespace :v1 do
+  #     resources :questions do
+  #       member do
+  #         get 'sync'
+  #         post 'results'
+  #       end
+  #     end
+  #   end
+  # end
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

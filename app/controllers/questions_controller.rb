@@ -2,7 +2,11 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
-    @questions = Question.all
+    if params[:aspect_id]
+      @questions = Aspect.find(params[:aspect_id]).questions.all)
+    else
+      @questions = Question.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb

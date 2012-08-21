@@ -2,7 +2,11 @@ class IndicatorsController < ApplicationController
   # GET /indicators
   # GET /indicators.json
   def index
-    @indicators = Indicator.all
+    if params[:aspect_id]
+      @indicators = Aspect.find(params[:aspect_id]).indicators.all
+    else
+      @indicators = Indicator.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb

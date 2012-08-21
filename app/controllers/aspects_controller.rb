@@ -6,7 +6,7 @@ class AspectsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @aspects }
+      format.json { render json: @aspects, :include => :questions, :include => :indicators }
     end
   end
 
@@ -20,6 +20,16 @@ class AspectsController < ApplicationController
       format.json { render json: @aspect }
     end
   end
+
+  # def questions
+  #   @aspect = Aspect.find(params[:id])
+  #   @questions = @aspect.questions
+
+  #   respond_to do |format|
+  #     format.html # show.html.erb
+  #     format.json { render json: @questions }
+  #   end
+  # end
 
   # GET /aspects/new
   # GET /aspects/new.json
