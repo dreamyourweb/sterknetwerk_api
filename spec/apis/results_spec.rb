@@ -11,16 +11,21 @@ describe "/results", type: :api do
   
   context "results with user authentication" do
     let(:url) { "/results" }
-    it "json" do
-      post "#{url}.json", token: token, results: @results
-      results_json = Result.first.to_json
-      last_response.body.should eql(results_json)
+    it "succesful JSON" do
+      post "#{url}.json", token: token, results: {email: "test@email.com"}
+      results = Result.where(email: "test@email.com").first
+      route = "/results/#{results.id}"
+      
       last_response.status.should eql(201)
-      results = JSON.parse(last_response.body)
-      #p questions
-      results.any? do |q|
-        q["email"] == "test"
-      end.should be_true
+      last_response.headers["Location"].should eql("http://example.org" + route)
+      last_response.body.should eql(results.to_json)
+    end
+    it "unsuccessful JSON" do
+      post "#{url}.json", :token => token,
+                          :results => {}
+      last_response.status.should eql(422)
+      errors = {"errors" => {"email" => ["can't be blank"]}}.to_json
+      last_response.body.should eql(errors)
     end
   end
 end
