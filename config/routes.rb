@@ -4,6 +4,7 @@ Sterknetwerk::Application.routes.draw do
   # resources :aspects
 
   resources :questions
+  resources :results
   
   resources :aspects do
     resources :questions
