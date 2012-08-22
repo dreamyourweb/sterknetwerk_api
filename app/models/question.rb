@@ -4,7 +4,7 @@ class Question < ActiveRecord::Base
   belongs_to :indicator
 
   def score(answer=nil)
-  	if answer.value != -1
+  	if answer && answer.value != -1
   		return answer_scores[answer.value]
   	else
   		return 0
