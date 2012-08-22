@@ -5,7 +5,5 @@ FactoryGirl.define do
     title "MyString"
     description "MyString"
     example "MyString"
-    score "MyString"
-    aspect_id 1
   end
 end
