@@ -20,11 +20,12 @@ describe "/results", type: :api do
       last_response.headers["Location"].should eql("http://example.org" + route)
       last_response.body.should eql(results.to_json)
     end
+    
     it "unsuccessful JSON" do
       post "#{url}.json", :token => token,
                           :results => {}
       last_response.status.should eql(422)
-      errors = {"errors" => {"email" => ["can't be blank"]}}.to_json
+      errors = {"errors" => {"email" => ["can't be blank", "is not an email"]}}.to_json
       last_response.body.should eql(errors)
     end
     it "succesful JSON questions" do

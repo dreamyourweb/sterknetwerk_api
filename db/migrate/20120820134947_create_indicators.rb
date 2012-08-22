@@ -6,6 +6,8 @@ class CreateIndicators < ActiveRecord::Migration
       t.text :example
       t.string :score
       t.integer :aspect_id
+      t.string :image_name
+      t.integer :threshold
 
       t.timestamps
     end

@@ -7,6 +7,7 @@ class CreateResults < ActiveRecord::Migration
       t.string :tel
       t.string :cc
       t.string :bcc
+      t.integer :aspects, array: true
 
       t.timestamps
     end
