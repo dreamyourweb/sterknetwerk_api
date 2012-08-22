@@ -40,13 +40,13 @@
 			<div class="footer"><div class="footer-bar"></div></div>
 		</div>
 
-		<% Aspect.all.each_with_index do |aspect,aspect_i| %>
-			<%# if aspect.aspects.include? aspect_i %>
+		<%  @aspects.each_with_index do |aspect,aspect_i| %>
+			<% if aspect.answer_type == "mc" # && aspect.aspects.include? aspect_i %>
 				<div class="page">
 					<h2><%= aspect.title %></h2>
 					<% aspect.indicators.each do |indicator| %>
 						<div style="clear:both"></div>
-						<div class="aspect-image" style="<%= image_name_to_css(indicator.image_name) %>;"><div class="passfail <%= indicator.pass ? "pass" : "fail" %>"></div></div>
+						<div class="aspect-image" style="<%= image_name_to_css(indicator.image_name) %>;"><div class="passfail <%= indicator.pass(@result) ? "pass" : "fail" %>"></div></div>
 						<div class="aspect-text">
 							<h3><%= indicator.title %></h3>
 							<p><%= indicator.description %></p>
@@ -55,25 +55,27 @@
 					<div style="clear:both"></div>
 					<div class="footer"><div class="footer-bar"></div></div>
 				</div>
-			<%# end %>
+			<% end %>
 		<% end %>
 
 
-		<!--<page_cost>-->			
-		<div class="page">
-			<h2>Kosten</h2>
-			<div class="cost-container">
-				<h3 id="huidige-kosten-name">Huidige kosten:</h3>
-				<span class="huidige-kosten">12345</span>
-				<h3 id="sn-kosten">Kosten SterkNetwerk:</h3>
-				<span class="sn-kosten">12345</span>
-				<h3 id="besparing">U bespaart:</h3>
-				<span class="besparing">12345</span>
-			</div>
-			<div style="clear:both"></div>
-			<div class="footer"><div class="footer-bar"></div></div>
-		</div>
-		<!--</page_cost>-->
+		<%  @aspects.each_with_index do |aspect,aspect_i| %>
+			<% if aspect.answer_type == "cash" # && aspect.aspects.include? aspect_i %>	
+				<div class="page">
+					<h2>Kosten</h2>
+					<div class="cost-container">
+						<h3 id="huidige-kosten-name">Huidige kosten:</h3>
+						<span class="huidige-kosten">12345</span>
+						<h3 id="sn-kosten">Kosten SterkNetwerk:</h3>
+						<span class="sn-kosten">12345</span>
+						<h3 id="besparing">U bespaart:</h3>
+						<span class="besparing">12345</span>
+					</div>
+					<div style="clear:both"></div>
+					<div class="footer"><div class="footer-bar"></div></div>
+				</div>
+			<% end %>
+		<% end %>
 
 		<div class="page">
 			<div class="handshake"></div>

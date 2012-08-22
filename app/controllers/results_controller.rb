@@ -18,6 +18,7 @@ class ResultsController < ApplicationController
   end
 
   def show
+    @aspects = Aspect.all(:include => :questions)
     @result = Result.first_or_initialize(:id => params[:id])
     render :layout => "report"
   end

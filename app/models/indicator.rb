@@ -7,23 +7,20 @@ class Indicator < ActiveRecord::Base
     return self.score(results) >= 1#pass_threshold
   end
 
-  def score(results=nil)
+  def score(result=nil)
     score = 0
     nn = 0
+    answers = result.answers
+    p "BLA"
     questions.each do |question|
-      if question.value != -1
-        nn = nn + 1
-        score = score + question.value
-      end
+      nn = nn + 1
+      p result.answers.find(:question_id => question.id).first
+      score = score + question.score(result.answers.find(:question_id => question.id).first)
     end
     if nn > 0
       score = score / nn
     end
     return score
-  end
-
-  def image_name
-    return "overalonline.png"
   end
 
 end
