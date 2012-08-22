@@ -2,15 +2,15 @@ class ResultsController < ApplicationController
   # POST /results
   # POST /results.json
   def create
-    p params
+    #p params
     if params[:results].present? && params[:results][:answers].present?
       answers = params[:results][:answers] 
       params[:results].delete :answers
     end
     @results = Result.create(params[:results])
     if answers
-      answers.each do |value|
-        @results.answers.build(value)
+      answers.each do |answer|
+        @results.answers.build(answer)
       end
     end
     @results.save

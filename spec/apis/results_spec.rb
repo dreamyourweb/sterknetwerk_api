@@ -31,6 +31,7 @@ describe "/results", type: :api do
       post "#{url}.json", token: token, results: {email: "test@email.com", answers: [{question_id: 1, value: 8},{question_id: 2, value: 7}]}
       results = Result.where(email: "test@email.com").first
       results.answers.first.value.should eql(8)
+      last_response.status.should eql(201)
     end
   end
 end
