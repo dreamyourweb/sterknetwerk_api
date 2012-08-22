@@ -26,34 +26,36 @@
 						<dd>17148758 's-Hertogenbosch</dd>
 				</dl>
 				<div class="spacer"></div>
-				<h3 id="company-name"><%= @results.company_name %></h3>
+				<h3 id="company-name"><%= @result.company_name %></h3>
 				<dl>
 					<dt>Contact persoon:</dt>
-						<dd id="client-name"><%= @results.contact_name %></dd>
+						<dd id="client-name"><%= @result.contact_name %></dd>
 					<dt>Telefoon:</dt>
-						<dd id="client-tel"><%= @results.tel %></dd>
+						<dd id="client-tel"><%= @result.tel %></dd>
 					<dt>Mail:</dt>
-						<dd id="client-email"><%= @results.email %></dd>
+						<dd id="client-email"><%= @result.email %></dd>
 				</dl>
 			</div>
 			<div style="clear:both"></div>
 			<div class="footer"><div class="footer-bar"></div></div>
 		</div>
 
-		<% Aspect.all.each do |aspect| %>
-			<div class="page">
-				<h2><%= aspect.title %></h2>
-				<% aspect.indicators.each do |indicator| %>
+		<% Aspect.all.each_with_index do |aspect,aspect_i| %>
+			<%# if aspect.aspects.include? aspect_i %>
+				<div class="page">
+					<h2><%= aspect.title %></h2>
+					<% aspect.indicators.each do |indicator| %>
+						<div style="clear:both"></div>
+						<div class="aspect-image" style="<%= image_name_to_css(indicator.image_name) %>;"><div class="passfail <%= indicator.pass ? "pass" : "fail" %>"></div></div>
+						<div class="aspect-text">
+							<h3><%= indicator.title %></h3>
+							<p><%= indicator.description %></p>
+						</div>
+					<% end %>
 					<div style="clear:both"></div>
-					<div class="aspect-image" style="background-image: <%= indicator.image_name %>;"><div class="passfail <%= indicator.pass ? "pass" : "fail" %>"></div></div>
-					<div class="aspect-text">
-						<h3><%= indicator.title %></h3>
-						<p><%= indicator.description %></p>
-					</div>
-				<% end %>
-				<div style="clear:both"></div>
-				<div class="footer"><div class="footer-bar"></div></div>
-			</div>
+					<div class="footer"><div class="footer-bar"></div></div>
+				</div>
+			<%# end %>
 		<% end %>
 
 
