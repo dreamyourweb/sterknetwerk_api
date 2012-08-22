@@ -4,14 +4,26 @@ class Indicator < ActiveRecord::Base
   belongs_to :aspect
 
   def pass(results=nil)
-  	if results == nil
-  		return true
-  	else
-  		questions.each do |question|
-  			# WIP
-  			value = Answer.find(:question_id => question.id).value 
-  		end
-  	end
+    return self.score(results) >= 1#pass_threshold
+  end
+
+  def score(results=nil)
+    score = 0
+    nn = 0
+    questions.each do |question|
+      if question.value != -1
+        nn = nn + 1
+        score = score + question.value
+      end
+    end
+    if nn > 0
+      score = score / nn
+    end
+    return score
+  end
+
+  def image_name
+    return "overalonline.png"
   end
 
 end
