@@ -36,15 +36,15 @@ ActiveRecord::Schema.define(:version => 20120821131610) do
     t.string   "score"
     t.integer  "aspect_id"
     t.string   "image_name"
-    t.integer  "threshold"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.integer  "pass_threshold"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "questions", :force => true do |t|
     t.string   "title"
-    t.string   "answers"
-    t.integer  "answer_scores"
+    t.string   "answers",                       :array => true
+    t.integer  "answer_scores",                 :array => true
     t.string   "answer_type"
     t.integer  "score"
     t.integer  "indicator_id"
