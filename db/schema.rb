@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(:version => 20120821131610) do
     t.text     "example"
     t.string   "score"
     t.integer  "aspect_id"
+    t.string   "image_name"
+    t.integer  "threshold"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
@@ -59,6 +61,7 @@ ActiveRecord::Schema.define(:version => 20120821131610) do
     t.string   "tel"
     t.string   "cc"
     t.string   "bcc"
+    t.integer  "aspects",                      :array => true
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
@@ -74,11 +77,12 @@ ActiveRecord::Schema.define(:version => 20120821131610) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "authentication_token"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
-    t.string   "authentication_token"
   end
 
+  add_index "users", ["authentication_token"], :name => "index_users_on_authentication_token", :unique => true
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
