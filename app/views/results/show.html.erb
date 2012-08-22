@@ -26,14 +26,14 @@
 						<dd>17148758 's-Hertogenbosch</dd>
 				</dl>
 				<div class="spacer"></div>
-				<h3 id="company-name">Klant</h3>
+				<h3 id="company-name"><%= @results.company_name %></h3>
 				<dl>
 					<dt>Contact persoon:</dt>
-						<dd id="client-name">Piet Heijn!</dd>
+						<dd id="client-name"><%= @results.contact_name %></dd>
 					<dt>Telefoon:</dt>
-						<dd id="client-tel">073-5510565 </dd>
+						<dd id="client-tel"><%= @results.tel %></dd>
 					<dt>Mail:</dt>
-						<dd id="client-email">info@sterknetwerk.nl </dd>
+						<dd id="client-email"><%= @results.email %></dd>
 				</dl>
 			</div>
 			<div style="clear:both"></div>
@@ -45,7 +45,7 @@
 				<h2><%= aspect.title %></h2>
 				<% aspect.indicators.each do |indicator| %>
 					<div style="clear:both"></div>
-					<div class="aspect-image image1"><div class="passfail <%= indicator.pass ? "pass" : "fail" %>"></div></div>
+					<div class="aspect-image" style="background-image: <%= indicator.image_name %>;"><div class="passfail <%= indicator.pass ? "pass" : "fail" %>"></div></div>
 					<div class="aspect-text">
 						<h3><%= indicator.title %></h3>
 						<p><%= indicator.description %></p>
@@ -56,98 +56,6 @@
 			</div>
 		<% end %>
 
-		<!--<page1>-->
-		<div class="page">
-			<h2>Beveiliging</h2>
-			<div class="aspect-image image1"><div class="passfail pf1"></div></div>
-			<div class="aspect-text">
-				<h3 class="i1">Mobiele werkplek</h3>
-				<p class="i1">Overal en altijd bij uw gegevens kunnen. Als professional zit u nooit stil en dus is het belangrijk dat uw werkomgeving met u meereist. Deze indicator geeft aan hoe goed u bent ingespeeld op het thuis- of op locatie werken. Overal dezelfde werkomgeving en altijd toegang tot uw gegevens. Dat is het streven voor u en uw personeel.</p>
-			</div>
-			<div style="clear:both"></div>
-			<div class="aspect-image image2"><div class="passfail pf2"></div></div>
-			<div class="aspect-text">
-				<h3 class="i2">Mobiele werkplek</h3>
-				<p class="i2">Overal en altijd bij uw gegevens kunnen. Als professional zit u nooit stil en dus is het belangrijk dat uw werkomgeving met u meereist. Deze indicator geeft aan hoe goed u bent ingespeeld op het thuis- of op locatie werken. Overal dezelfde werkomgeving en altijd toegang tot uw gegevens. Dat is het streven voor u en uw personeel.</p>
-			</div>
-			<div style="clear:both"></div>
-			<div class="aspect-image image3"><div class="passfail pf3"></div></div>
-			<div class="aspect-text">
-				<h3 class="i3">Mobiele werkplek</h3>
-				<p class="i3">Overal en altijd bij uw gegevens kunnen. Als professional zit u nooit stil en dus is het belangrijk dat uw werkomgeving met u meereist. Deze indicator geeft aan hoe goed u bent ingespeeld op het thuis- of op locatie werken. Overal dezelfde werkomgeving en altijd toegang tot uw gegevens. Dat is het streven voor u en uw personeel.</p>
-			</div>
-			<div style="clear:both"></div>
-			<div class="aspect-image image4"><div class="passfail pf4"></div></div>
-			<div class="aspect-text">
-				<h3 class="i4">Mobiele werkplek</h3>
-				<p class="i4">Overal en altijd bij uw gegevens kunnen. Als professional zit u nooit stil en dus is het belangrijk dat uw werkomgeving met u meereist. Deze indicator geeft aan hoe goed u bent ingespeeld op het thuis- of op locatie werken. Overal dezelfde werkomgeving en altijd toegang tot uw gegevens. Dat is het streven voor u en uw personeel.</p>
-			</div>
-			<div style="clear:both"></div>
-			<div class="footer"><div class="footer-bar"></div></div>
-		</div>
-		<!--</page1>-->
-
-		<!--<page2>-->
-		<div class="page">
-			<h2>Continuiteit</h2>
-			<div class="aspect-image image1"><div class="passfail pf1"></div></div>
-			<div class="aspect-text">
-				<h3 class="i1">Mobiele werkplek</h3>
-				<p class="i1">Overal en altijd bij uw gegevens kunnen. Als professional zit u nooit stil en dus is het belangrijk dat uw werkomgeving met u meereist. Deze indicator geeft aan hoe goed u bent ingespeeld op het thuis- of op locatie werken. Overal dezelfde werkomgeving en altijd toegang tot uw gegevens. Dat is het streven voor u en uw personeel.</p>
-			</div>
-			<div style="clear:both"></div>
-			<div class="aspect-image image2"><div class="passfail pf2"></div></div>
-			<div class="aspect-text">
-				<h3 class="i2">Mobiele werkplek</h3>
-				<p class="i2">Overal en altijd bij uw gegevens kunnen. Als professional zit u nooit stil en dus is het belangrijk dat uw werkomgeving met u meereist. Deze indicator geeft aan hoe goed u bent ingespeeld op het thuis- of op locatie werken. Overal dezelfde werkomgeving en altijd toegang tot uw gegevens. Dat is het streven voor u en uw personeel.</p>
-			</div>
-			<div style="clear:both"></div>
-			<div class="aspect-image image3"><div class="passfail pf3"></div></div>
-			<div class="aspect-text">
-				<h3 class="i3">Mobiele werkplek</h3>
-				<p class="i3">Overal en altijd bij uw gegevens kunnen. Als professional zit u nooit stil en dus is het belangrijk dat uw werkomgeving met u meereist. Deze indicator geeft aan hoe goed u bent ingespeeld op het thuis- of op locatie werken. Overal dezelfde werkomgeving en altijd toegang tot uw gegevens. Dat is het streven voor u en uw personeel.</p>
-			</div>
-			<div style="clear:both"></div>
-			<div class="aspect-image image4"><div class="passfail pf4"></div></div>
-			<div class="aspect-text">
-				<h3 class="i4">Mobiele werkplek</h3>
-				<p class="i4">Overal en altijd bij uw gegevens kunnen. Als professional zit u nooit stil en dus is het belangrijk dat uw werkomgeving met u meereist. Deze indicator geeft aan hoe goed u bent ingespeeld op het thuis- of op locatie werken. Overal dezelfde werkomgeving en altijd toegang tot uw gegevens. Dat is het streven voor u en uw personeel.</p>
-			</div>
-			<div style="clear:both"></div>
-			<div class="footer"><div class="footer-bar"></div></div>
-		</div>
-		<!--</page2>-->
-
-		<!--<page3>-->				
-		<div class="page">
-			<h2>Mogelijkheden</h2>
-			<div class="aspect-image image1"><div class="passfail pf1"></div></div>
-			<div class="aspect-text">
-				<h3 class="i1">Mobiele werkplek</h3>
-				<p class="i1">Overal en altijd bij uw gegevens kunnen. Als professional zit u nooit stil en dus is het belangrijk dat uw werkomgeving met u meereist. Deze indicator geeft aan hoe goed u bent ingespeeld op het thuis- of op locatie werken. Overal dezelfde werkomgeving en altijd toegang tot uw gegevens. Dat is het streven voor u en uw personeel.</p>
-			</div>
-			<div style="clear:both"></div>
-			<div class="aspect-image image2"><div class="passfail pf2"></div></div>
-			<div class="aspect-text">
-				<h3 class="i2">Mobiele werkplek</h3>
-				<p class="i2">Overal en altijd bij uw gegevens kunnen. Als professional zit u nooit stil en dus is het belangrijk dat uw werkomgeving met u meereist. Deze indicator geeft aan hoe goed u bent ingespeeld op het thuis- of op locatie werken. Overal dezelfde werkomgeving en altijd toegang tot uw gegevens. Dat is het streven voor u en uw personeel.</p>
-			</div>
-			<div style="clear:both"></div>
-			<div class="aspect-image image3"><div class="passfail pf3"></div></div>
-			<div class="aspect-text">
-				<h3 class="i3">Mobiele werkplek</h3>
-				<p class="i3">Overal en altijd bij uw gegevens kunnen. Als professional zit u nooit stil en dus is het belangrijk dat uw werkomgeving met u meereist. Deze indicator geeft aan hoe goed u bent ingespeeld op het thuis- of op locatie werken. Overal dezelfde werkomgeving en altijd toegang tot uw gegevens. Dat is het streven voor u en uw personeel.</p>
-			</div>
-			<div style="clear:both"></div>
-			<div class="aspect-image image4"><div class="passfail pf4"></div></div>
-			<div class="aspect-text">
-				<h3 class="i4">Mobiele werkplek</h3>
-				<p class="i4">Overal en altijd bij uw gegevens kunnen. Als professional zit u nooit stil en dus is het belangrijk dat uw werkomgeving met u meereist. Deze indicator geeft aan hoe goed u bent ingespeeld op het thuis- of op locatie werken. Overal dezelfde werkomgeving en altijd toegang tot uw gegevens. Dat is het streven voor u en uw personeel.</p>
-			</div>
-			<div style="clear:both"></div>
-			<div class="footer"><div class="footer-bar"></div></div>
-		</div>
-		<!--</page3>-->
 
 		<!--<page_cost>-->			
 		<div class="page">
