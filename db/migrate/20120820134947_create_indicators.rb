@@ -7,7 +7,7 @@ class CreateIndicators < ActiveRecord::Migration
       t.string :score
       t.integer :aspect_id
       t.string :image_name
-      t.integer :threshold
+      t.integer :pass_threshold
 
       t.timestamps
     end
