@@ -41,7 +41,7 @@
 		</div>
 
 		<%  @aspects.each_with_index do |aspect,aspect_i| %>
-			<% if aspect.answer_type == "mc" # && aspect.aspects.include? aspect_i %>
+			<% if aspect.answer_type == "mc" && !@result.aspects.nil? && (@result.aspects.include? aspect_i) %>
 				<div class="page">
 					<h2><%= aspect.title %></h2>
 					<% aspect.indicators.each do |indicator| %>
@@ -60,7 +60,7 @@
 
 
 		<%  @aspects.each_with_index do |aspect,aspect_i| %>
-			<% if aspect.answer_type == "cash" # && aspect.aspects.include? aspect_i %>	
+			<% if aspect.answer_type == "cash" && !@result.aspects.nil? && (@result.aspects.include? aspect_i) %>	
 				<div class="page">
 					<h2>Kosten</h2>
 					<div class="cost-container">
