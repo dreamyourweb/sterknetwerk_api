@@ -7,7 +7,8 @@ gem 'rails', '3.2.8'
 
 gem 'pg'
 gem 'postgres_ext'
-
+gem 'pdfkit'
+gem 'wkhtmltopdf-binary'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -40,3 +41,7 @@ gem 'thin'
 group :test, :development do
   gem 'rspec-rails'
 end
+
+# group :production do
+#  gem 'wkhtmltopdf-heroku'
+# end

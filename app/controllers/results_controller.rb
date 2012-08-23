@@ -7,6 +7,10 @@ class ResultsController < ApplicationController
       answers = params[:results][:answers] 
       params[:results].delete :answers
     end
+
+    p "Array?: " + params[:results][:aspects].is_a?(Array).to_s
+    p "String?: " + params[:results][:aspects].is_a?(String).to_s
+    
     @results = Result.create(params[:results])
     if answers
       answers.each do |answer|
@@ -25,6 +29,14 @@ class ResultsController < ApplicationController
     else
       @company_name = @result.company_name
     end
-    render :layout => "report"
+    respond_to do |format|
+      format.html do
+        render :layout => "report"
+      end
+      format.pdf do
+        render :template => 'results/show.html.erb', :pdf => "file_name", :layout => "report"
+      end
+    end
+
   end
 end

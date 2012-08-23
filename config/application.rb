@@ -2,6 +2,8 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 require 'postgres_ext'
+require 'pdfkit'
+
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
@@ -62,5 +64,7 @@ module Sterknetwerk
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    config.middleware.use PDFKit::Middleware, :print_media_type => true, :margin_bottom => 0, :margin_top => 0,:margin_left => 0,:margin_right => 0, :page_width => 210, :page_height => 297
   end
 end
