@@ -65,6 +65,6 @@ module Sterknetwerk
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
-    config.middleware.use PDFKit::Middleware, :print_media_type => true, :margin_bottom => 0, :margin_top => 0,:margin_left => 0,:margin_right => 0, :page_width => 210, :page_height => 297
+    config.middleware.use PDFKit::Middleware
   end
 end

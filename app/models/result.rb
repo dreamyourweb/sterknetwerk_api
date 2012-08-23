@@ -8,7 +8,7 @@ class Result < ActiveRecord::Base
     pdf_filename = "tmp/report" + id.to_s + ".pdf"
     file = PDFKit.new(ResultsController.new.show_string(id)).to_file pdf_filename
 
-    mail = ReportMailer.pdf_report(email, pdf_filename,id)
+    mail = ReportMailer.pdf_report(contact_name, email, pdf_filename)
     mail.deliver
   end
 end

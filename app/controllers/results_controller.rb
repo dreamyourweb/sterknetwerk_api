@@ -20,6 +20,7 @@ class ResultsController < ApplicationController
 
     @results.save
 
+    # @results.send_email
     @results.delay.send_email
 
     respond_with(@results)
