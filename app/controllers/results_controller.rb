@@ -6,6 +6,7 @@ class ResultsController < ApplicationController
     if params[:results].present? && params[:results][:answers].present?
       answers = params[:results][:answers] 
       params[:results].delete :answers
+      #params[:aspects]=params[:aspects]+1
     end
 
     #p "Array?: " + params[:results][:aspects].is_a?(Array).to_s
