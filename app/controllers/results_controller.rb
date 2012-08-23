@@ -20,6 +20,11 @@ class ResultsController < ApplicationController
   def show
     @aspects = Aspect.all(:include => :questions)
     @result = Result.find(params[:id])
+    if @result.company_name == "" || @result.company_name.nil?
+      @company_name = "Bedrijf"
+    else
+      @company_name = @result.company_name
+    end
     render :layout => "report"
   end
 end
