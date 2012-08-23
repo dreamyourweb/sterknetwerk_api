@@ -43,15 +43,16 @@ ActiveRecord::Schema.define(:version => 20120821131610) do
 
   create_table "questions", :force => true do |t|
     t.string   "title"
-    t.string   "answers",                       :array => true
-    t.integer  "answer_scores",                 :array => true
+    t.string   "answers",                           :array => true
+    t.integer  "answer_scores",                     :array => true
     t.string   "answer_type"
     t.integer  "score"
     t.integer  "indicator_id"
     t.integer  "aspect_id"
     t.integer  "factor"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.boolean  "cash_sterknetwerk"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
   end
 
   create_table "results", :force => true do |t|

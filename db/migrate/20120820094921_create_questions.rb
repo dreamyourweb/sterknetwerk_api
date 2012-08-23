@@ -9,6 +9,7 @@ class CreateQuestions < ActiveRecord::Migration
       t.integer :indicator_id
       t.integer :aspect_id
       t.integer :factor
+      t.boolean :cash_sterknetwerk
 
       t.timestamps
     end

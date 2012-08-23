@@ -3,5 +3,9 @@
 FactoryGirl.define do
   factory :aspect do
     title "Mogelijkheden"
+    factory :aspect_kosten do
+      title "kosten"
+      answer_type "cash"
+    end
   end
 end
