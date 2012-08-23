@@ -60,11 +60,11 @@
 					<h2>Kosten</h2>
 					<div class="cost-container">
 						<h3 id="huidige-kosten-name">Huidige kosten:</h3>
-						<span class="huidige-kosten"><%= aspect.get_client_cost(@result).to_s %></span>
+						<span class="huidige-kosten"><%= number_to_euro(aspect.get_client_cost(@result)) %></span>
 						<h3 id="sn-kosten">Kosten SterkNetwerk:</h3>
-						<span class="sn-kosten"><%= aspect.get_sterknetwerk_cost(@result) %></span>
+						<span class="sn-kosten"><%= number_to_euro(aspect.get_sterknetwerk_cost(@result)) %></span>
 						<h3 id="besparing">U bespaart:</h3>
-						<span class="besparing"><%= (aspect.get_client_cost(@result) - aspect.get_sterknetwerk_cost(@result)).to_s %></span>
+						<span class="besparing"><%= number_to_euro(aspect.get_client_cost(@result) - aspect.get_sterknetwerk_cost(@result)) %></span>
 					</div>
 					<div style="clear:both"></div>
 					<div class="footer"><div class="footer-bar"></div></div>
