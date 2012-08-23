@@ -4,7 +4,7 @@ class ReportMailer < ActionMailer::Base
   def pdf_report(recipient_name, recipient_email, pdf_filename)
   	attachments['rapport.pdf'] = File.read(pdf_filename)
     mail(:to => "#{recipient_name} <#{recipient_email}>") do |format|
-    	format.text { render :text => 'Render text' }
+    	format.text { render :text => 'Bedankt voor het invullen van de Sterknetwerk vragenlijst.\nNeem gerust contact op bij vragen.\n\nMet vriendelijke groet,\nSterknetwerk' }
     end
          # :bcc => "SterkNetwerk <info@sterknetwerk.nl>")
   end
