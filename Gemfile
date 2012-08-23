@@ -9,6 +9,7 @@ gem 'pg'
 gem 'postgres_ext'
 gem 'pdfkit'
 gem 'wkhtmltopdf-binary'
+gem 'delayed_job_active_record'
 
 # Gems used only for assets and not required
 # in production environments by default.

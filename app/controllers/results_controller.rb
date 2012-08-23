@@ -19,11 +19,8 @@ class ResultsController < ApplicationController
     end
 
     @results.save
-    pdf_filename = "tmp/report" + @results.id.to_s + ".pdf"
-    file = PDFKit.new(self.show_string(@results.id)).to_file pdf_filename
 
-    mail = ReportMailer.pdf_report(@results.email, pdf_filename, @results.id)
-    mail.deliver
+    @results.delay.send_email
 
     respond_with(@results)
   end
