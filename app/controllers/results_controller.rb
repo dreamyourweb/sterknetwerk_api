@@ -8,8 +8,8 @@ class ResultsController < ApplicationController
       params[:results].delete :answers
     end
 
-    p "Array?: " + params[:results][:aspects].is_a?(Array).to_s
-    p "String?: " + params[:results][:aspects].is_a?(String).to_s
+    #p "Array?: " + params[:results][:aspects].is_a?(Array).to_s
+    #p "String?: " + params[:results][:aspects].is_a?(String).to_s
     
     @results = Result.create(params[:results])
     if answers
@@ -18,10 +18,11 @@ class ResultsController < ApplicationController
       end
     end
 
-    @results.save
+    if @results.save
 
     # @results.send_email
-    @results.delay.send_email
+      @results.delay.send_email
+    end
 
     respond_with(@results)
   end
