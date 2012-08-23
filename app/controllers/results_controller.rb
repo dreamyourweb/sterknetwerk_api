@@ -17,11 +17,16 @@ class ResultsController < ApplicationController
         @results.answers.build(answer)
       end
     end
+
     @results.save
+
+    # @results.send_email
+    @results.delay.send_email
+
     respond_with(@results)
   end
 
-  def show
+  def show(override_id=nil)
     @aspects = Aspect.all(:include => :questions)
     @result = Result.find(params[:id])
     if @result.company_name == "" || @result.company_name.nil?
@@ -29,6 +34,7 @@ class ResultsController < ApplicationController
     else
       @company_name = @result.company_name
     end
+
     respond_to do |format|
       format.html do
         render :layout => "report"
@@ -39,4 +45,21 @@ class ResultsController < ApplicationController
     end
 
   end
-end
+
+  def show_string(id)
+    params = Hash.new
+    params[:id] = id.to_s
+    params[:format] = "html"
+
+    @aspects = Aspect.all(:include => :questions)
+    @result = Result.find(params[:id])
+    if @result.company_name == "" || @result.company_name.nil?
+      @company_name = "Bedrijf"
+    else
+      @company_name = @result.company_name
+    end
+
+    render_to_string :template => 'results/show.html.erb', :layout => 'report'
+  end
+
+end 
