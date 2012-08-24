@@ -5,7 +5,11 @@ class Question < ActiveRecord::Base
 
   def score(answer=nil)
   	if answer && answer.value != -1
-  		return answer_scores[answer.value]
+      if not answer_scores[answer.value].nil?
+  		  return answer_scores[answer.value]
+      else
+        return 0
+      end
   	else
   		return 0
   	end

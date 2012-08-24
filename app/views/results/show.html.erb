@@ -39,6 +39,7 @@
 			<% if aspect.answer_type == "mc" && !@result.aspects.nil? && (@result.aspects.include? aspect_i) %>
 				<div class="page">
 					<h2><%= aspect.title %></h2>
+					<h3 class="aspect-score">Rapport cijfer: <%= aspect.score(@result) %></h3>
 					<% aspect.indicators.each do |indicator| %>
 						<div style="clear:both"></div>
 						<div class="aspect-image" style="<%= image_name_to_css(indicator.image_name) %>;"><div class="passfail <%= indicator.pass(@result) ? "pass" : "fail" %>"></div></div>

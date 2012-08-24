@@ -4,16 +4,18 @@ class Indicator < ActiveRecord::Base
   belongs_to :aspect
 
   def pass(result=nil)
-    return self.score(result) >= 1#pass_threshold
+    return self.score(result) >= pass_threshold
   end
 
   def score(result=nil)
+
     score = 0
     nn = 0
     answers = result.answers
     questions.each do |question|
       nn = nn + 1
       if (result.answers.where(:question_id => question.id).first != nil)
+        p result.answers.where(:question_id => question.id).first
         score = score + question.score(result.answers.where(:question_id => question.id).first)
       end
     end
