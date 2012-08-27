@@ -1,4 +1,11 @@
 class QuestionsController < ApplicationController
+  #skip_before_filter :authenticate_user!, :only => :index
+  skip_before_filter :authenticate_user!, :only => [:index]
+
+  before_filter(:only => :index) do |controller|
+    controller.send(:authenticate_user!) unless controller.request.format.json?
+  end
+  
   # GET /questions
   # GET /questions.json
   def index

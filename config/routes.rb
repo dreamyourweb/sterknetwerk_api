@@ -1,4 +1,6 @@
 Sterknetwerk::Application.routes.draw do
+  devise_for :users
+  
   resources :indicators
 
   # resources :aspects
@@ -11,7 +13,6 @@ Sterknetwerk::Application.routes.draw do
     resources :indicators
   end
 
-  devise_for :users
 
   
   # The priority is based upon order of creation:

@@ -1,4 +1,6 @@
 class ResultsController < ApplicationController
+  skip_before_filter :authenticate_user!, :only => [:show, :create, :show_string]
+  
   # POST /results
   # POST /results.json
   def create
