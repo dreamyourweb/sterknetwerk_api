@@ -1,0 +1,21 @@
+<h1>Listing results</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Example</th>
+    <th>Aspect</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @results.each do |result| %>
+  <tr>
+    <td><%= result.email %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />

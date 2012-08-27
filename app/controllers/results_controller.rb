@@ -63,5 +63,9 @@ class ResultsController < ApplicationController
 
     render_to_string :template => 'results/show.html.erb', :layout => 'report'
   end
+  
+  def index
+    @results=Result.all
+  end
 
 end 
