@@ -37,4 +37,16 @@ class Aspect < ActiveRecord::Base
       return 0
     end
   end
+
+  def score(result=nil)
+    score = 0
+    if not result.nil?
+      self.indicators.each do |indicator|
+        score = score + indicator.score(result)
+      end
+      score = score/self.indicators.count
+    end
+    return score
+  end
+
 end
