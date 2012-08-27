@@ -6,7 +6,7 @@
     <th>Name</th>
     <th>Telephone</th>
     <th>Company</th>
-    <th></th>
+    <th>Answers</th>
     <th></th>
     <th></th>
   </tr>
@@ -17,7 +17,7 @@
 	<td><%= result.contact_name %></td>
 	<td><%= result.tel %></td>
 	<td><%= result.company_name %></td>
-	<td><%= result.answers.to_yaml %></td>
+	<td><%= result.answers.to_json %></td>
   </tr>
 <% end %>
 </table>
