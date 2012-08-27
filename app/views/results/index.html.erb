@@ -2,10 +2,10 @@
 
 <table>
   <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Example</th>
-    <th>Aspect</th>
+    <th>Email</th>
+    <th>Name</th>
+    <th>Telephone</th>
+    <th>Company</th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,6 +14,10 @@
 <% @results.each do |result| %>
   <tr>
     <td><%= result.email %></td>
+	<td><%= result.contact_name %></td>
+	<td><%= result.tel %></td>
+	<td><%= result.company_name %></td>
+	<td><%= result.answers.to_string %></td>
   </tr>
 <% end %>
 </table>
