@@ -27,11 +27,11 @@
   </div>
   <div class="field">
     <%= f.label :aspect %><br />
-    <%= f.collection_select(:aspect_id, Aspect.all, :id, :title) %>
+    <%= f.collection_select(:aspect_id, Aspect.all, :id, :title, {prompt: "select aspect"}) %>
   </div>
   <div class="field">
     <%= f.label :indicator %><br />
-    <%= f.collection_select(:indicator_id, Indicator.all, :id, :title) %>
+    <%= f.collection_select(:indicator_id, Indicator.all, :id, :title, {prompt: "select indicator"}) %>
   </div>
   <div class="field">
     <p>Unable to use decimal, use integer</p>
