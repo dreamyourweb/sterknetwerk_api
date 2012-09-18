@@ -16,26 +16,25 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :answers %><br />
-    <%= f.text_field :answers %>
+    <p>Please don't change! Unless you know what you're doing</p>
+    <%= f.label :id %>
+    <%= f.number_field :id %>
   </div>
-  <div class="field">
-    <%= f.label :answer_scores %><br />
-    <%= f.text_field :answer_scores %>
-  </div>
+  <p>I'm sorry, not able to change answers and answer scores</p>
   <div class="field">
     <%= f.label :answer_type %><br />
     <%= f.select :answer_type, ["mc", "cash"] %>
   </div>
   <div class="field">
     <%= f.label :aspect %><br />
-    <%= f.collection_select(:aspect_id, Aspect.all, :id, :title) %>
+    <%= f.collection_select(:aspect_id, Aspect.all, :id, :title, {prompt: "select aspect"}) %>
   </div>
   <div class="field">
     <%= f.label :indicator %><br />
-    <%= f.collection_select(:indicator_id, Indicator.all, :id, :title) %>
+    <%= f.collection_select(:indicator_id, Indicator.all, :id, :title, {prompt: "select indicator"}) %>
   </div>
   <div class="field">
+    <p>Unable to use decimal, use integer</p>
     <%= f.label :factor %><br />
     <%= f.number_field :factor %>
   </div>

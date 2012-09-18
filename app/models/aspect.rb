@@ -7,9 +7,9 @@ class Aspect < ActiveRecord::Base
     if self.answer_type == 'cash'
       cash=0
       self.questions.each do |question|
-        p question
+        #p question
         answer = result.answers.where(:question_id => question.id).first
-        p answer
+        #p answer
         if (answer != nil && question.cash_sterknetwerk)
           cash = cash + question.factor * answer.value
           # p answer.value

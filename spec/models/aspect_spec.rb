@@ -23,4 +23,13 @@ describe Aspect do
     end
 
   end
+  describe "score" do
+    before do
+      @result = FactoryGirl.create(:result)
+    end
+    it "should show score" do
+      @aspect = Aspect.where(title: "beveiliging").first
+      @aspect.score.should == 8
+    end
+  end
 end

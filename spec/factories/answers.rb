@@ -11,5 +11,9 @@ FactoryGirl.define do
     factory :answer_kosten_SN do
       association :question, factory: :question_kosten_SN
     end
+    factory :answer_beveiliging do
+      value 8
+      association :question, factory: :question_beveiliging
+    end
   end
 end
