@@ -1,5 +1,5 @@
 class Indicator < ActiveRecord::Base
-  attr_accessible :aspect_id, :description, :example, :score, :title, :image_name, :pass_threshold
+  attr_accessible :id, :aspect_id, :description, :example, :score, :title, :image_name, :pass_threshold
   has_many :questions
   belongs_to :aspect
 
