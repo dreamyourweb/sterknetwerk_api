@@ -9,6 +9,7 @@
     <th>Score</th>
     <th>Indicator</th>
     <th>Factor</th>
+    <th>ID</th>
     <th></th>
     <th></th>
     <th></th>
@@ -20,9 +21,9 @@
     <td><%= question.answers %></td>
     <td><%= question.answer_scores %></td>
     <td><%= question.answer_type %></td>
-    <td><%= question.score %></td>
-    <td><%= question.indicator %></td>
+    <td><%= question.indicator.title %></td>
     <td><%= question.factor %></td>
+    <td><%= question.id %></td>
     <td><%= link_to 'Show', question %></td>
     <td><%= link_to 'Edit', edit_question_path(question) %></td>
     <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>

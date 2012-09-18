@@ -7,5 +7,8 @@ FactoryGirl.define do
       title "kosten"
       answer_type "cash"
     end
+    factory :aspect_beveiliging do
+      title "beveiliging"
+    end
   end
 end

@@ -15,5 +15,8 @@ FactoryGirl.define do
       association :aspect, factory: :aspect_kosten
       cash_sterknetwerk true
     end
+    factory :question_beveiliging do
+      association :aspect, factory: :aspect_beveiliging
+    end
   end
 end
