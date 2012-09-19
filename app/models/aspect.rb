@@ -24,7 +24,7 @@ class Aspect < ActiveRecord::Base
   def get_client_cost(result=nil)
     if self.answer_type == 'cash'
       cash=0
-      p questions
+      #p questions
       self.questions.each do |question|
         answer = result.answers.where(:question_id => question.id).first
         if (answer != nil)

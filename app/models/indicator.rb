@@ -8,7 +8,6 @@ class Indicator < ActiveRecord::Base
   end
 
   def score(result=nil)
-
     score = 0
     nn = 0
     answers = result.answers
